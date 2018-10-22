@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+header {
+	height: 40px;
+	width: auto;
+	background-color: #66cbff;
+	margin-bottom: 2em;
+}
+
+hr {
+	background-color: lightgray;
+	color: lightgray;
+	height: 3px;
+	margin-bottom: 2em;
+}
+
+#logo-container {
+	margin-left: 9em;
+}
+
+#logo-container::after {
+	content: "Team Members";
+	color: black;
+	vertical-align: middle;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2em;
+	color: #969fad;
+	margin-left: 1em;
+}
+
+
+@media(max-width: 660px){
+
+	img#logo {
+		display: block;
+		float: left;
+	}
+	span#logo-container[_ngcontent-c0]::after {
+		display: block;
+		margin-left: 1px;
+	}
+	span#logo-container[_ngcontent-c0] {
+		display: inline-block;
+		margin-left: 1px;
+	}
+
+	span#logo-container[_ngcontent-c0]::after{
+		visibility: visible;
+		padding: 2em;
+		display: block;
+	}
+}

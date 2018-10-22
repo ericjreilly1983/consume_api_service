@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <span id="search-box">
+    <input 
+      (input)="getFilteredUsers()" 
+      class="col-lg-7" 
+      id="search-input" 
+      type="text"  
+      name="users" 
+      [(ngModel)]="filterString"
+      placeholder="Search by name">
+  </span>
+
+  <span id="people">{{filteredUsers?.length}} People</span>
+
+  <div class="accordion" id="accordionExample">
+    <div class="card" *ngFor="let user of filteredUsers">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0" (click) = 'transformPlus($event)'>
+          <button 
+            class="btn btn-link" 
+            type="button" 
+            data-toggle="collapse" 
+            [attr.data-target]="'#' + user.name.slice(0, 2) + user.name.length" 
+            aria-expanded="true" 
+            aria-controls="collapseOne">
+            {{user.name}}
+          </button>
+          <span class= "plus-sign">+</span>
+        </h5>
+      </div>
+      <div 
+        [id]="user.name.slice(0, 2) + user.name.length" 
+        class="collapse" 
+        aria-labelledby="headingOne" 
+        data-parent="#accordionExample">
+        <div class="card-body">
+          <img src="./assets/user.jpg" id= "user-pic">
+          {{user.email}}<br/>
+          {{user.address}}<br/>
+        </div>
+      </div><!-- end  of .card-body-->
+    </div><!-- end of .card -->
+  </div><!--end of .accordion-->
+</div><!--end of .wrapper -->
