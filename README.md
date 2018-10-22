@@ -34,7 +34,7 @@ npm install -g @angular/cli
 npm install -g bootstrap
 npm install -g jquery
 
-The styles array in package.json should contain the following dependencies, in this ordre:
+The styles array in package.json should contain the following dependencies, in this order:
 
 "node_modules/bootstrap/dist/css/bootstrap.min.css",
 "src/styles.css"
